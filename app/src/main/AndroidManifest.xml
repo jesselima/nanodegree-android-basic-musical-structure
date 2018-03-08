@@ -16,6 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SplashScreenActivity" />
+        <activity android:name=".ArtistsActivity" />
+        <activity android:name=".NowPlayingActivity" />
+        <activity android:name=".SongDetailsActivity" />
+        <activity android:name=".GenresActivity" />
+        <activity android:name=".SongsListActivity"></activity>
     </application>
 
 </manifest>
