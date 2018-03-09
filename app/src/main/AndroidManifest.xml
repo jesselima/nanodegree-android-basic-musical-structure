@@ -19,29 +19,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="Music Structure"
-            android:name=".SplashScreenActivity" >
-        </activity>
+            android:name=".SplashScreenActivity"
+            android:label="Music Structure"></activity>
         <activity
-            android:label="Artists"
-            android:name=".ArtistsActivity" >
-        </activity>
+            android:name=".ArtistsActivity"
+            android:label="Artists"></activity>
         <activity
-            android:label="Now Playing"
-            android:name=".NowPlayingActivity" >
-        </activity>
+            android:name=".NowPlayingActivity"
+            android:label="Now Playing"></activity>
         <activity
-            android:label="Songs Details"
-            android:name=".SongDetailsActivity" >
-        </activity>
+            android:name=".SongDetailsActivity"
+            android:label="Songs Details"></activity>
         <activity
-            android:label="Musics by Genres"
-            android:name=".GenresActivity">
-        </activity>
+            android:name=".GenresActivity"
+            android:label="Musics by Genres"></activity>
         <activity
-            android:label="All Songs"
-            android:name=".SongsListActivity">
-        </activity>
+            android:name=".SongsListActivity"
+            android:label="All Songs"></activity>
+        <activity android:name=".MyActivity"></activity>
     </application>
 
 </manifest>
