@@ -18,12 +18,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashScreenActivity" />
-        <activity android:name=".ArtistsActivity" />
-        <activity android:name=".NowPlayingActivity" />
-        <activity android:name=".SongDetailsActivity" />
-        <activity android:name=".GenresActivity" />
-        <activity android:name=".SongsListActivity"></activity>
+        <activity
+            android:label="Music Structure"
+            android:name=".SplashScreenActivity" >
+        </activity>
+        <activity
+            android:label="Artists"
+            android:name=".ArtistsActivity" >
+        </activity>
+        <activity
+            android:label="Now Playing"
+            android:name=".NowPlayingActivity" >
+        </activity>
+        <activity
+            android:label="Songs Details"
+            android:name=".SongDetailsActivity" >
+        </activity>
+        <activity
+            android:label="Musics by Genres"
+            android:name=".GenresActivity">
+        </activity>
+        <activity
+            android:label="All Songs"
+            android:name=".SongsListActivity">
+        </activity>
     </application>
 
 </manifest>

@@ -6,70 +6,66 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 public class MainActivity extends AppCompatActivity {
-    private TextView mTextViewResult;
-    private RequestQueue mQueue;
+
+    private TextView textViewResult;
+    private String json = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTextViewResult = findViewById(R.id.text_view_result);
+        textViewResult = findViewById(R.id.text_view_result);
         Button buttonParse = findViewById(R.id.button_parse);
-
-        mQueue = Volley.newRequestQueue(this);
 
         buttonParse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                jsonParse();
+                loadJson();
             }
         });
     }
 
-    private void jsonParse() {
+    public void loadJson(){
 
-        String url = "https://api.myjson.com/bins/kp9wz";
+        json = null;
 
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("employees");
+        try {
+            InputStream is = getApplicationContext().getAssets().open("musicdata.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer, "UTF-8");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject employee = jsonArray.getJSONObject(i);
+        try {
+            JSONObject obj = new JSONObject(json);
+            JSONArray jsonArray = obj.getJSONArray("musicdata");
 
-                                String firstName = employee.getString("firstname");
-                                int age = employee.getInt("age");
-                                String mail = employee.getString("mail");
+            for (int i = 0; i < jsonArray.length(); i++) {
 
-                                mTextViewResult.append(firstName + ", " + String.valueOf(age) + ", " + mail + "\n\n");
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
+                JSONObject musicdata = jsonArray.getJSONObject(i);
+
+                String song = musicdata.getString("song");
+                int year = musicdata.getInt("year");
+                String artist = musicdata.getString("artist");
+
+                textViewResult.append(song + ", " + String.valueOf(year) + ", " + artist + "\n\n");
             }
-        });
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
-        mQueue.add(request);
     }
 }
