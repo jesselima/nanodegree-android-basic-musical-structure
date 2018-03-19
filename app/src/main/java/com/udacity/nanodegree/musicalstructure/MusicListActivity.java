@@ -2,8 +2,6 @@ package com.udacity.nanodegree.musicalstructure;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -13,7 +11,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MainActivity extends AppCompatActivity {
+public class MusicListActivity extends AppCompatActivity {
 
     private TextView textViewResult;
     private String json = null;
@@ -21,17 +19,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_music_list);
 
         textViewResult = findViewById(R.id.text_view_result);
-        Button buttonParse = findViewById(R.id.button_parse);
 
-        buttonParse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadJson();
-            }
-        });
+        loadJson();
+
+//        Button buttonParse = findViewById(R.id.button_parse);
+
+//        buttonParse.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                loadJson();
+//            }
+//        });
     }
 
     public void loadJson(){
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 int year = musicdata.getInt("year");
                 String artist = musicdata.getString("artist");
 
-                textViewResult.append(song + ", " + String.valueOf(year) + ", " + artist + "\n\n");
+                textViewResult.append(song + ", " + ", " + artist + String.valueOf(year)+ "\n\n");
             }
         } catch (JSONException e) {
             e.printStackTrace();

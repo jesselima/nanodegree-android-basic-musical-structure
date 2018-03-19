@@ -1,6 +1,7 @@
 {
   "musicdata": [
       {
+        "id": 1,
         "song": "Algebra2",
         "artist": "Black Box",
         "genres": "Rock",
@@ -12,6 +13,7 @@
         "aboutArtist": "Formed in 2017, BlackBox is a multidisciplinary design team fusing a diversity of creative specialties into something wholly new. Our curiosity lies in bending sound & image into lush, atmospheric textures."
       },
       {
+        "id": 2,
         "song": "Early Delivery Man",
         "artist": "Brent Bourgeois",
         "genres": "Electronic",
@@ -23,6 +25,7 @@
         "aboutArtist": "Brent Bourgeois is an American singer/songwriter, music producer, and founding member of the pop group Bourgeois Tagg. He released his latest album, \"Don't Look Back,\" in 2014."
       },
       {
+        "id": 3,
         "song": "Finland Station",
         "artist": "Brent Bourgeois",
         "genres": "Electronic",
@@ -34,6 +37,7 @@
         "aboutArtist": "Brent Bourgeois is an American singer/songwriter, music producer, and founding member of the pop group Bourgeois Tagg. He released his latest album, \"Don't Look Back,\" in 2014."
       },
       {
+        "id": 4,
         "song": "Let Me Open The Door",
         "artist": "Brent Bourgeois",
         "genres": "Pop",
@@ -45,6 +49,7 @@
         "aboutArtist": "Brent Bourgeois is an American singer/songwriter, music producer, and founding member of the pop group Bourgeois Tagg. He released his latest album, \"Don't Look Back,\" in 2014."
       },
       {
+        "id": 5,
         "song": "Party Bus",
         "artist": "Brent Bourgeois",
         "genres": "R&B and Soul",
@@ -56,6 +61,7 @@
         "aboutArtist": "Brent Bourgeois is an American singer/songwriter, music producer, and founding member of the pop group Bourgeois Tagg. He released his latest album, \"Don't Look Back,\" in 2014."
       },
       {
+        "id": 6,
         "song": "Snakey Jane",
         "artist": "Brent Bourgeois",
         "genres": "R&B and Soul",
@@ -67,6 +73,7 @@
         "aboutArtist": "Brent Bourgeois is an American singer/songwriter, music producer, and founding member of the pop group Bourgeois Tagg. He released his latest album, \"Don't Look Back,\" in 2014."
       },
       {
+        "id": 7,
         "song": "Scatterbrain",
         "artist": "Ella Joy Meir",
         "genres": "Electronic",
@@ -78,6 +85,7 @@
         "aboutArtist": "Ella Joy Meir is an NYC based composer, songwriter, lyricist, vocalist, sound-designer, and bandleader of the indie-pop quartet Iris Lune. She has written and performed for numerous projects, including songs for the Macworld conferences of 2013 and 2014 (produced by Dr. Andrea Pejrolo), performed on the soundtrack for a documentary film (Cautivadas, 2013 by Mercedes Ortega), and has composed music�for several film projects by director Swati Srivastava."
       },
       {
+        "id": 8,
         "song": "Oh",
         "artist": "Gia Sky",
         "genres": "Electronic",
@@ -89,6 +97,7 @@
         "aboutArtist": "A Los Angeles Native, Gia operates his studio out of Malibu canyons where he collaborates with songwriters."
       },
       {
+        "id": 9,
         "song": "Do It Y'all",
         "artist": "Jumbo",
         "genres": "Reggae",
@@ -100,6 +109,7 @@
         "aboutArtist": "Solomon David professionally known as Jumbo is a DJ, music producer, sound mutator, emcee, crate digger and curator of feels . The soulful sound and feel of Jumbo%u2019s creations are quirky, funky, chopped up meticulously crafted Hip Hop and soul gems."
       },
       {
+        "id": 10,
         "song": "Driven",
         "artist": "Jumbo",
         "genres": "Electronic",
@@ -111,6 +121,7 @@
         "aboutArtist": "Solomon David professionally known as Jumbo is a DJ, music producer, sound mutator, emcee, crate digger and curator of feels . The soulful sound and feel of Jumbo%u2019s creations are quirky, funky, chopped up meticulously crafted Hip Hop and soul gems."
       },
       {
+        "id": 11,
         "song": "So Saxy",
         "artist": "Keith Thomas",
         "genres": "Pop",
@@ -122,6 +133,7 @@
         "aboutArtist": "Few songwriters and music producers have established their names in the industry as Keith Thomas. His talents have brought him acclaim and awards in multiple genres, earning Keith multiple Grammy awards with over 20 nominations in categories such as Producer Of The Year, Song Of The Year, Record Of The Year, and Album Of The Year. So far, his career has garnered over 40 #1 singles, in multiple genres such as Pop, CCM, Gospel, R&B, AC, generating album sales in excess of 30 million."
       },
       {
+        "id": 12,
         "song": "Woody's Revenge",
         "artist": "Keith Thomas",
         "genres": "Electronic",
@@ -133,6 +145,7 @@
         "aboutArtist": "Few songwriters and music producers have established their names in the industry as Keith Thomas. His talents have brought him acclaim and awards in multiple genres, earning Keith multiple Grammy awards with over 20 nominations in categories such as Producer Of The Year, Song Of The Year, Record Of The Year, and Album Of The Year. So far, his career has garnered over 40 #1 singles, in multiple genres such as Pop, CCM, Gospel, R&B, AC, generating album sales in excess of 30 million."
       },
       {
+        "id": 13,
         "song": "REMCycle",
         "artist": "Man DeLorean",
         "genres": "Electronic",
@@ -144,6 +157,7 @@
         "aboutArtist": "My name Is Spencer Selmon. I like to shred the G-tar and make beats and weird videos."
       },
       {
+        "id": 14,
         "song": "Breezy Epic",
         "artist": "Marshall Watson",
         "genres": "Electronic",
@@ -155,6 +169,7 @@
         "aboutArtist": "Marshall Watson is a San Francisco recording artist and composer with a catalogue of releases that span nearly 12 years. He%u2019s been featured on Lo�q Records, Highpoint Lowlife, Seven Villas, Seven Villas Voyage, Celsius Recordings and many more."
       },
       {
+        "id": 15,
         "song": "Ashoka",
         "artist": "Mike Block (Producer)",
         "genres": "Indian",
@@ -166,6 +181,7 @@
         "aboutArtist": "MIKE BLOCK is a Grammy Award-winning multi-style cellist, singer, composer, and educator, hailed by Yo-Yo Ma as the \"ideal musician of the 21st-Century\", and acclaimed by the NY Times for his \"vital rich-hued solo playing\"."
       },
       {
+        "id": 16,
         "song": "Bo Shambo in Raga Revati",
         "artist": "Mike Block (Producer)",
         "genres": "Middle Eastern",
@@ -177,6 +193,7 @@
         "aboutArtist": "MIKE BLOCK is a Grammy Award-winning multi-style cellist, singer, composer, and educator, hailed by Yo-Yo Ma as the \"ideal musician of the 21st-Century\", and acclaimed by the NY Times for his \"vital rich-hued solo playing\"."
       },
       {
+        "id": 17,
         "song": "Ruby Slippers",
         "artist": "Neko Fuzz",
         "genres": "Electronic",
@@ -188,6 +205,7 @@
         "aboutArtist": "Feline Muzo - music deep from the soul. Neko Fuzz channels beats from the diverse streets of the whole wide world."
       },
       {
+        "id": 18,
         "song": "California Flash",
         "artist": "Neko Fuzz",
         "genres": "R&B and Soul",
@@ -199,6 +217,7 @@
         "aboutArtist": "Feline Muzo - music deep from the soul. Neko Fuzz channels beats from the diverse streets of the whole wide world."
       },
       {
+        "id": 19,
         "song": "Dance Up A Storm",
         "artist": "Neko Fuzz",
         "genres": "Electronic",
@@ -210,6 +229,7 @@
         "aboutArtist": "Feline Muzo - music deep from the soul. Neko Fuzz channels beats from the diverse streets of the whole wide world."
       },
       {
+        "id": 20,
         "song": "Janky Wink",
         "artist": "Neko Fuzz",
         "genres": "Electronic",
@@ -221,6 +241,7 @@
         "aboutArtist": "Feline Muzo - music deep from the soul. Neko Fuzz channels beats from the diverse streets of the whole wide world."
       },
       {
+        "id": 21,
         "song": "Route 128",
         "artist": "Neko Fuzz",
         "genres": "Electronic",
@@ -232,6 +253,7 @@
         "aboutArtist": "Feline Muzo - music deep from the soul. Neko Fuzz channels beats from the diverse streets of the whole wide world."
       },
       {
+        "id": 22,
         "song": "Mind The Dog",
         "artist": "Ron Levy",
         "genres": "Electronic",
@@ -243,6 +265,7 @@
         "aboutArtist": "Ron Levy has been DJing and producing music since 1998. As a member of Idiot Savant, he has performed at events and festivals across the US. He lives in the mountains of Northern California with his wife, dog, drum machines and field recorder."
       },
       {
+        "id": 23,
         "song": "Baltimore",
         "artist": "Scott Dugdale",
         "genres": "Electronic",
@@ -254,6 +277,7 @@
         "aboutArtist": "Scott Dugdale is an Emmy Award winning composer who%u2019s work can be heard in several films, TV shows and over 30 video game titles, including the phenomenal Guitar Hero and Karaoke Revolution series, Rockband, and titles from Disney, Activision, and more."
       },
       {
+        "id": 24,
         "song": "Sun Kissed",
         "artist": "Shaw Quentin",
         "genres": "Electronic",
@@ -265,6 +289,7 @@
         "aboutArtist": "San Francisco based DJ and producer focused on forward thinking Electronic and House music."
       },
       {
+        "id": 25,
         "song": "Tell Me A Story",
         "artist": "Swell Music + Sound",
         "genres": "Electronic",
@@ -276,6 +301,7 @@
         "aboutArtist": "Swell Music + Sound is a one stop shop for all custom music, sound design, and mix needs."
       },
       {
+        "id": 26,
         "song": "Won't Stop",
         "artist": "Swell Music + Sound",
         "genres": "Electronic",
@@ -287,6 +313,7 @@
         "aboutArtist": "Swell Music + Sound is a one stop shop for all custom music, sound design, and mix needs."
       },
       {
+        "id": 27,
         "song": "The Big Time",
         "artist": "Trout Recording",
         "genres": "Electronic",
