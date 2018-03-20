@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.udacity.nanodegree.musicalstructure.adapters.MusicListAdapter;
+import com.udacity.nanodegree.musicalstructure.models.MusicListModel;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

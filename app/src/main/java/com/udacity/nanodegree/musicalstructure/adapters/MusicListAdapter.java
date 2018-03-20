@@ -1,4 +1,4 @@
-package com.udacity.nanodegree.musicalstructure;
+package com.udacity.nanodegree.musicalstructure.adapters;
 
 
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.udacity.nanodegree.musicalstructure.models.MusicListModel;
+import com.udacity.nanodegree.musicalstructure.R;
 
 import java.util.List;
 

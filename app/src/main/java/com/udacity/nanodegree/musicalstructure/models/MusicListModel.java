@@ -1,4 +1,4 @@
-package com.udacity.nanodegree.musicalstructure;
+package com.udacity.nanodegree.musicalstructure.models;
 
 
 public class MusicListModel {
