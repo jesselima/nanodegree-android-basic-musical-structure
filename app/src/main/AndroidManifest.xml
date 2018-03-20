@@ -6,12 +6,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/udacity"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/udacity"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MusicListActivity">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,8 +19,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="Music Structure"
-            android:name=".SplashScreenActivity" >
+            android:label="Music List"
+            android:name=".MusicListActivity" >
         </activity>
         <activity
             android:label="Artists"
@@ -32,15 +32,11 @@
         </activity>
         <activity
             android:label="Songs Details"
-            android:name=".SongDetailsActivity" >
+            android:name=".MusicDetailsActivity" >
         </activity>
         <activity
-            android:label="Musics by Genres"
+            android:label="Musics Genres"
             android:name=".GenresActivity">
-        </activity>
-        <activity
-            android:label="All Songs"
-            android:name=".SongsListActivity">
         </activity>
     </application>
 

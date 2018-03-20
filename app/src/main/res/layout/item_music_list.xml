@@ -45,7 +45,6 @@
                 android:layout_marginEnd="10dp"
                 android:layout_toStartOf="@+id/btn_add_to_playlist"
                 android:src="@drawable/ic_play_arrow_black_48dp"
-                android:onClick="playNow"
                 android:tint="@color/colorPrimaryDark" />
             <TextView
                 android:id="@+id/text_view_song_id"
