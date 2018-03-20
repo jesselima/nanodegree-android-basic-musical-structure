@@ -14,7 +14,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Song Name"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:typeface="sans"/>
@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/text_view_song_name"
                 android:text="Artist Name"
-                android:textColor="@color/cardview_dark_background"
+                android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
                 android:textStyle="italic"
                 android:typeface="sans" />
@@ -45,6 +45,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_toStartOf="@+id/btn_add_to_playlist"
                 android:src="@drawable/ic_play_arrow_black_48dp"
+                android:onClick="playNow"
                 android:tint="@color/colorPrimaryDark" />
             <TextView
                 android:id="@+id/text_view_song_id"

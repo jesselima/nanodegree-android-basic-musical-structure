@@ -30,10 +30,10 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.songId.setText(musicList.get(position).getSongId());
-        holder.songName.setText(musicList.get(position).getSongName());
-        holder.artistName.setText(musicList.get(position).getArtistName());
-        holder.songYear.setText(musicList.get(position).getSongYear());
+        holder.id.setText(String.valueOf(musicList.get(position).getSongId()));
+        holder.song.setText(musicList.get(position).getSongName());
+        holder.artist.setText(musicList.get(position).getArtistName());
+        holder.year.setText(String.valueOf(musicList.get(position).getSongYear()));
         //Glide.with(context).load(OBJECT_LIST.get(position).getImage_link()).into(holder.imageView);
     }
 
@@ -44,15 +44,15 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
 
     public  class ViewHolder extends  RecyclerView.ViewHolder{
 
-        public TextView songId, songName, artistName, songYear;
+        public TextView id, song, artist, year;
         //public ImageView imageView;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            songId = itemView.findViewById(R.id.text_view_song_id);
-            songName = itemView.findViewById(R.id.text_view_song_name);
-            artistName = itemView.findViewById(R.id.text_view_artist_name);
-            songYear = itemView.findViewById(R.id.text_view_song_year);
+            id = itemView.findViewById(R.id.text_view_song_id);
+            song = itemView.findViewById(R.id.text_view_song_name);
+            artist = itemView.findViewById(R.id.text_view_artist_name);
+            year = itemView.findViewById(R.id.text_view_song_year);
             // imageView = itemView.findViewById(R.id.image);
         }
     }

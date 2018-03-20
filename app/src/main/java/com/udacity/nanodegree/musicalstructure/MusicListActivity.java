@@ -2,7 +2,8 @@ package com.udacity.nanodegree.musicalstructure;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -10,10 +11,18 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MusicListActivity extends AppCompatActivity {
 
-    private TextView textViewResult;
+    private RecyclerView recyclerView;
+    private LinearLayoutManager linearLayoutManager;
+    private MusicListAdapter adapter;
+    private List<MusicListModel> musicList;
+
+    //ImageView btnPlay;
+
     private String json = null;
 
     @Override
@@ -21,18 +30,17 @@ public class MusicListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_list);
 
-        textViewResult = findViewById(R.id.text_view_result);
+        recyclerView = findViewById(R.id.recycler_view);
+        musicList = new ArrayList<>();
 
         loadJson();
 
-//        Button buttonParse = findViewById(R.id.button_parse);
+        linearLayoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(linearLayoutManager);
 
-//        buttonParse.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                loadJson();
-//            }
-//        });
+        adapter = new MusicListAdapter(this, musicList);
+        recyclerView.setAdapter(adapter);
+
     }
 
     public void loadJson(){
@@ -58,11 +66,14 @@ public class MusicListActivity extends AppCompatActivity {
 
                 JSONObject musicdata = jsonArray.getJSONObject(i);
 
-                String song = musicdata.getString("song");
-                int year = musicdata.getInt("year");
-                String artist = musicdata.getString("artist");
+                MusicListModel data = new MusicListModel(
+                        musicdata.getInt("id"),
+                        musicdata.getString("song"),
+                        musicdata.getString("artist"),
+                        musicdata.getInt("year")
+                );
+                musicList.add(data);
 
-                textViewResult.append(song + ", " + ", " + artist + String.valueOf(year)+ "\n\n");
             }
         } catch (JSONException e) {
             e.printStackTrace();
