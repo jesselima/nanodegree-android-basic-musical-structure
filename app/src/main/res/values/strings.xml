@@ -3,4 +3,10 @@
     <string name="nanodegree_android_basic">Nanodegree Android Basic</string>
     <string name="project_04">Project 04</string>
     <string name="by_jesse_lima">by Jesse Lima</string>
+    <string name="now_playing">Now Playing...</string>
+    <string name="paused">Paused!</string>
+    <string name="stopped">Stopped!</string>
+    <string name="error">Error!</string>
+    <string name="error_message">An error has been encountered</string>
+    <string name="listen_now">LISTEN NOW</string>
 </resources>

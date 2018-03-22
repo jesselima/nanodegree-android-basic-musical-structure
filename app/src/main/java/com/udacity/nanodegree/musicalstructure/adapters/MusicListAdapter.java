@@ -2,12 +2,15 @@ package com.udacity.nanodegree.musicalstructure.adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.udacity.nanodegree.musicalstructure.NowPlayingActivity;
 import com.udacity.nanodegree.musicalstructure.models.MusicListModel;
 import com.udacity.nanodegree.musicalstructure.R;
 
@@ -37,7 +40,6 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
         holder.song.setText(musicList.get(position).getSongName());
         holder.artist.setText(musicList.get(position).getArtistName());
         holder.year.setText(String.valueOf(musicList.get(position).getSongYear()));
-        //Glide.with(context).load(OBJECT_LIST.get(position).getImage_link()).into(holder.imageView);
     }
 
     @Override
@@ -45,18 +47,35 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
         return musicList.size();
     }
 
-    public  class ViewHolder extends  RecyclerView.ViewHolder{
+    public class ViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener{
 
-        public TextView id, song, artist, year;
-        //public ImageView imageView;
+        private TextView id, song, artist, year;
+        private ImageView imageViewPlayButton;
 
-        public ViewHolder(View itemView) {
+        private ViewHolder(View itemView) {
             super(itemView);
+
+            imageViewPlayButton = itemView.findViewById(R.id.btn_play);
+            imageViewPlayButton.setOnClickListener(this);
+
             id = itemView.findViewById(R.id.text_view_song_id);
             song = itemView.findViewById(R.id.text_view_song_name);
             artist = itemView.findViewById(R.id.text_view_artist_name);
             year = itemView.findViewById(R.id.text_view_song_year);
-            // imageView = itemView.findViewById(R.id.image);
+        }
+        @Override
+        public void onClick(View itemView) {
+
+            int position = getAdapterPosition();
+            position++;
+
+            String song = "";
+
+            Intent intent = new Intent(itemView.getContext(), NowPlayingActivity.class);
+                intent.putExtra("id", position);
+                intent.putExtra("song", song);
+            itemView.getContext().startActivity(intent);
+
         }
     }
 }

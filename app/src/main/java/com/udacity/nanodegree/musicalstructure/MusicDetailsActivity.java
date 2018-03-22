@@ -6,30 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 public class MusicDetailsActivity extends AppCompatActivity {
-
 
     int idSong;
 
     TextView textViewSong, textViewArtist, textViewYear, textViewGenres, textViewRhythm, textViewDuration;
     String urlSound, urlArtistImage;
 
-    private String json = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_details);
-
-        // TODO: Id must be come from intent
-        idSong = 10;
 
         textViewSong = findViewById(R.id.text_view_song_name);
         textViewArtist = findViewById(R.id.text_view_artist_name);
@@ -38,61 +26,22 @@ public class MusicDetailsActivity extends AppCompatActivity {
         textViewRhythm = findViewById(R.id.text_view_song_rhythm);
         textViewDuration = findViewById(R.id.text_view_song_duration);
 
-        loadJson();
-    }
+        Bundle musicData = getIntent().getExtras();
+        idSong = musicData.getInt("year");
+        urlSound = musicData.getString("urlSound");
+        urlArtistImage = musicData.getString("urlArtistImage");
 
-
-    public void loadJson(){
-
-        json = null;
-
-        try {
-            InputStream is = getApplicationContext().getAssets().open("musicdata.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            JSONObject obj = new JSONObject(json);
-            JSONArray jsonArray = obj.getJSONArray("musicdata");
-
-
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject musicdata = jsonArray.getJSONObject(i);
-
-                    int idObject = musicdata.getInt("id");
-
-                    if (idObject == idSong){
-                        textViewSong.setText(musicdata.getString("song"));
-                        textViewArtist.setText(musicdata.getString("artist"));
-                        textViewYear.setText(String.valueOf(musicdata.getInt("year")));
-                        textViewGenres.setText(musicdata.getString("genres"));
-                        textViewRhythm.setText(musicdata.getString("rhythm"));
-                        textViewDuration.setText(musicdata.getString("duration"));
-
-                        urlSound = musicdata.getString("urlSound");
-                        urlArtistImage = musicdata.getString("urlArtistImage");
-
-                    }
-
-
-
-
-                }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
+        textViewSong.setText(musicData.getString("song"));
+        textViewArtist.setText(musicData.getString("artist"));
+        textViewYear.setText(String.valueOf(musicData.getInt("year")));
+        textViewGenres.setText(musicData.getString("genres"));
+        textViewRhythm.setText(musicData.getString("rhythm"));
+        textViewDuration.setText(musicData.getString("duration"));
     }
 
     public void goToPlayNow(View view){
         Intent intent = new Intent(this, NowPlayingActivity.class);
+
         startActivity(intent);
     }
 }

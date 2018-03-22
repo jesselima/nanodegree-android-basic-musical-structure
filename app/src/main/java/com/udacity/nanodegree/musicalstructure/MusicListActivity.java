@@ -85,9 +85,4 @@ public class MusicListActivity extends AppCompatActivity {
         }
 
     }
-
-    public void goToSongDetails(View view){
-        Intent intent = new Intent(this, MusicDetailsActivity.class);
-        startActivity(intent);
-    }
 }

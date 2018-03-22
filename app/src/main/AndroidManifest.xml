@@ -11,7 +11,9 @@
         android:roundIcon="@drawable/udacity"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreenActivity">
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,10 +30,12 @@
         </activity>
         <activity
             android:label="Now Playing"
+            android:parentActivityName=".MusicListActivity"
             android:name=".NowPlayingActivity" >
         </activity>
         <activity
-            android:label="Songs Details"
+            android:label="Music Details"
+            android:parentActivityName=".MusicListActivity"
             android:name=".MusicDetailsActivity" >
         </activity>
         <activity
