@@ -9,4 +9,7 @@
     <string name="error">Error!</string>
     <string name="error_message">An error has been encountered</string>
     <string name="listen_now">LISTEN NOW</string>
+    <string name="song_name">Song Name</string>
+    <string name="artist_name">Artist Name</string>
+    <string name="_0_00">0:00</string>
 </resources>

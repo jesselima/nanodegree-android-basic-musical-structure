@@ -35,7 +35,6 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
         holder.id.setText(String.valueOf(musicList.get(position).getSongId()));
         holder.song.setText(musicList.get(position).getSongName());
         holder.artist.setText(musicList.get(position).getArtistName());
@@ -51,12 +50,16 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
 
         private TextView id, song, artist, year;
         private ImageView imageViewPlayButton;
+        private ViewGroup listItemBlock;
 
         private ViewHolder(View itemView) {
             super(itemView);
 
             imageViewPlayButton = itemView.findViewById(R.id.btn_play);
             imageViewPlayButton.setOnClickListener(this);
+
+            listItemBlock = itemView.findViewById(R.id.list_item_block);
+            listItemBlock.setOnClickListener(this);
 
             id = itemView.findViewById(R.id.text_view_song_id);
             song = itemView.findViewById(R.id.text_view_song_name);
@@ -67,13 +70,11 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
         public void onClick(View itemView) {
 
             int position = getAdapterPosition();
-            position++;
-
-            String song = "";
 
             Intent intent = new Intent(itemView.getContext(), NowPlayingActivity.class);
-                intent.putExtra("id", position);
-                intent.putExtra("song", song);
+                intent.putExtra("id", musicList.get(position).getSongId());
+                intent.putExtra("song", musicList.get(position).getSongName());
+                intent.putExtra("artist", musicList.get(position).getArtistName());
             itemView.getContext().startActivity(intent);
 
         }

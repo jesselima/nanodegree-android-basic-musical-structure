@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,11 +27,10 @@ public class NowPlayingActivity extends AppCompatActivity {
     int idSong, year;
     String song, artist, genres, rhythm, duration, urlArtistImage, aboutArtist;
 
-    TextView textViewSong, textViewArtist;
+//    TextView textViewSongName, textViewArtistName;
 
     public static String urlSound;
     private String json = null;
-    View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,18 @@ public class NowPlayingActivity extends AppCompatActivity {
 
         Bundle musicData = getIntent().getExtras();
         idSong = musicData.getInt("id");
+        song = musicData.getString("song");
+        artist = musicData.getString("artist");
+
+        // Testing data from MusicAdapter
+        Log.v("NowPlaying ", "Song ID from Adapter: " + idSong);
+        Log.v("NowPlaying ", "Song Name from Adapter: " + song);
+        Log.v("NowPlaying ", "Artist Name from Adapter: " + artist);
+
+        TextView textViewSongName = findViewById(R.id.text_view_song_name);
+        //textViewSongName.setText(song);
+        TextView textViewArtistName = findViewById(R.id.text_view_artist_name);
+        //textViewArtistName.setText(artist);
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
@@ -46,7 +58,6 @@ public class NowPlayingActivity extends AppCompatActivity {
         }
 
         loadJson(idSong);
-        //showArtistAndSong(view);
     }
 
     public static class PlaceholderFragment extends Fragment implements View.OnClickListener {
@@ -147,11 +158,6 @@ public class NowPlayingActivity extends AppCompatActivity {
 
     }
 
-//    public void onBackPressed() {
-//        Toast.makeText(NowPlayingActivity.this, "Back Button is being Pressed!", Toast.LENGTH_SHORT).show();
-//        //playerEvents.stop();
-//        super.onBackPressed();
-//    }
 
     public String loadJson(int idSong){
 
@@ -194,13 +200,6 @@ public class NowPlayingActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return urlSound;
-    }
-
-    public void showArtistAndSong(View view){
-        textViewSong = findViewById(R.id.text_view_song_name);
-        textViewSong.setText(song);
-        textViewArtist = findViewById(R.id.text_view_artist_name);
-        textViewArtist.setText(artist);
     }
 
 

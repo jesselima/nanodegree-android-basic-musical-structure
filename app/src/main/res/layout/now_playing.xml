@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/layout_margin8"
         android:gravity="center"
-        android:text="Song Name"
+        android:text="@string/song_name"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/text_size_title"
         android:textStyle="bold"
@@ -29,27 +29,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Artist Name"
+        android:text="@string/artist_name"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/text_size_sub_heading"
         android:textStyle="italic"
         android:typeface="sans" />
-<!--
-    <LinearLayout
-        android:id="@+id/linlaHeaderProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:visibility="visible" >
-        <ProgressBar
-            android:id="@+id/loading"
-            style="?android:attr/progressBarStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-        </ProgressBar>
-    </LinearLayout>
--->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,7 +54,7 @@
         android:layout_marginBottom="16dp"
         android:id="@+id/text_view_progress"
         android:layout_gravity="center"
-        android:text="0:00"/>
+        android:text="@string/_0_00"/>
 
 <LinearLayout
     android:layout_width="match_parent"

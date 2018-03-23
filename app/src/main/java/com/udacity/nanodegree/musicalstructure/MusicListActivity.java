@@ -1,11 +1,9 @@
 package com.udacity.nanodegree.musicalstructure;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.udacity.nanodegree.musicalstructure.adapters.MusicListAdapter;
 import com.udacity.nanodegree.musicalstructure.models.MusicListModel;
@@ -25,8 +23,6 @@ public class MusicListActivity extends AppCompatActivity {
     private LinearLayoutManager linearLayoutManager;
     private MusicListAdapter adapter;
     private List<MusicListModel> musicList;
-
-    //ImageView btnPlay;
 
     private String json = null;
 
