@@ -71,7 +71,9 @@ public class MusicListActivity extends AppCompatActivity {
                         musicdata.getInt("id"),
                         musicdata.getString("song"),
                         musicdata.getString("artist"),
-                        musicdata.getInt("year")
+                        musicdata.getInt("year"),
+                        musicdata.getString("aboutArtist"),
+                        musicdata.getString("urlArtistImage")
                 );
                 musicList.add(data);
 

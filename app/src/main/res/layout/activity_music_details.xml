@@ -72,9 +72,16 @@
         android:textSize="@dimen/text_size_sub_heading"
         android:textStyle="italic"
         android:typeface="sans"/>
-    <Button
-        style="@style/buttonDefault"
-        android:text="@string/listen_now"
-        android:onClick="goToPlayNow"/>
+
+    <TextView
+        android:id="@+id/text_view_about_artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/about_artist"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_size_sub_heading"
+        android:textStyle="italic"
+        android:typeface="sans"/>
 
 </LinearLayout>

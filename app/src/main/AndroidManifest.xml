@@ -25,18 +25,18 @@
             android:name=".MusicListActivity" >
         </activity>
         <activity
-            android:label="Artists"
-            android:name=".ArtistsActivity" >
-        </activity>
-        <activity
             android:label="Now Playing"
             android:parentActivityName=".MusicListActivity"
             android:name=".NowPlayingActivity" >
         </activity>
         <activity
             android:label="Music Details"
-            android:parentActivityName=".MusicListActivity"
+
             android:name=".MusicDetailsActivity" >
+        </activity>
+        <activity
+            android:label="Artists"
+            android:name=".ArtistsActivity" >
         </activity>
         <activity
             android:label="Musics Genres"

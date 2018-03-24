@@ -4,14 +4,15 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.udacity.nanodegree.musicalstructure.OpenMXPlayer.OpenMXPlayer;
 import com.udacity.nanodegree.musicalstructure.OpenMXPlayer.PlayerEvents;
 
@@ -25,11 +26,11 @@ import java.io.InputStream;
 public class NowPlayingActivity extends AppCompatActivity {
 
     int idSong, year;
-    String song, artist, genres, rhythm, duration, urlArtistImage, aboutArtist;
+    String genres, rhythm, duration, aboutArtist;
+    static String urlArtistImage;
 
-//    TextView textViewSongName, textViewArtistName;
 
-    public static String urlSound;
+    public static String urlSound, song, artist;
     private String json = null;
 
     @Override
@@ -41,16 +42,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         idSong = musicData.getInt("id");
         song = musicData.getString("song");
         artist = musicData.getString("artist");
-
-        // Testing data from MusicAdapter
-        Log.v("NowPlaying ", "Song ID from Adapter: " + idSong);
-        Log.v("NowPlaying ", "Song Name from Adapter: " + song);
-        Log.v("NowPlaying ", "Artist Name from Adapter: " + artist);
-
-        TextView textViewSongName = findViewById(R.id.text_view_song_name);
-        //textViewSongName.setText(song);
-        TextView textViewArtistName = findViewById(R.id.text_view_artist_name);
-        //textViewArtistName.setText(artist);
+        urlArtistImage = musicData.getString("urlArtistImage");
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
@@ -63,9 +55,11 @@ public class NowPlayingActivity extends AppCompatActivity {
     public static class PlaceholderFragment extends Fragment implements View.OnClickListener {
 
         SeekBar seekbar;
-        TextView seekBarTitle, progress;
+        TextView seekBarTitle, progress, textViewSongName, textViewArtistName;
+        ImageView artistImage;
 
         PlayerEvents events = new PlayerEvents() {
+
             @Override
             public void onStop() {
                 seekbar.setProgress(0);
@@ -106,13 +100,26 @@ public class NowPlayingActivity extends AppCompatActivity {
         public PlaceholderFragment() {
         }
 
+        /**
+         *
+         * @param inflater uses the method inflate to inflate the now_playing layout inside the ViewGroup container
+         * @param container is the FrameLayout that will hold all the child views in now play activity
+         * @param savedInstanceState ...
+         * @return
+         */
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.now_playing, container,false);
 
+            textViewSongName = rootView.findViewById(R.id.text_view_song_name);
+            textViewArtistName = rootView.findViewById(R.id.text_view_artist_name);
+            artistImage = rootView.findViewById(R.id.image_artist);
+
             (rootView.findViewById(R.id.btn_play)).setOnClickListener(this);
             (rootView.findViewById(R.id.btn_pause)).setOnClickListener(this);
             (rootView.findViewById(R.id.btn_stop)).setOnClickListener(this);
+            (rootView.findViewById(R.id.btn_previous)).setOnClickListener(this);
+            (rootView.findViewById(R.id.btn_next)).setOnClickListener(this);
 
             seekbar = rootView.findViewById(R.id.seekbar);
             seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -125,7 +132,25 @@ public class NowPlayingActivity extends AppCompatActivity {
 
             seekBarTitle = rootView.findViewById(R.id.text_view_seek_bar_title);
             progress = rootView.findViewById(R.id.text_view_progress);
+
             return rootView;
+        }
+
+        @Override
+        public void onResume(){
+            super.onResume();
+            playerEvents.waitPlay();
+        }
+
+        @Override
+        public void onStart(){
+            super.onStart();
+            playerEvents.waitPlay();
+            textViewSongName.setText(song);
+            textViewArtistName.setText(artist);
+            Glide.with(this)
+                    .load(urlArtistImage)
+                    .into(artistImage);
         }
 
         @Override
@@ -136,29 +161,35 @@ public class NowPlayingActivity extends AppCompatActivity {
                     playerEvents.setDataSource(urlSound);
                     playerEvents.play();
                     seekBarTitle.setText(R.string.now_playing);
+                    Toast.makeText(getContext(), "Playing " + song, Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.btn_pause:
                     playerEvents.pause();
                     seekBarTitle.setText(R.string.paused);
+                    Toast.makeText(getContext(), R.string.music_paused, Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.btn_stop:
                     playerEvents.stop();
                     seekBarTitle.setText(R.string.stopped);
+                    Toast.makeText(getContext(), R.string.music_stopped, Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.btn_previous:
+                    Toast.makeText(getContext(), R.string.previous_clicked, Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.btn_next:
+                    Toast.makeText(getContext(), R.string.next_clicked, Toast.LENGTH_SHORT).show();
                     break;
             }
 
         }
 
-        // ********
-        @Override
-        public void onResume(){
-            super.onResume();
-            playerEvents.stop();
-        }
-
     }
 
-
+    /**
+     *
+     * @param idSong is the id of the song.
+     * @return the url of the sound file.
+     */
     public String loadJson(int idSong){
 
         json = null;
@@ -194,14 +225,12 @@ public class NowPlayingActivity extends AppCompatActivity {
                     urlArtistImage = musicdata.getString("urlArtistImage");
                     aboutArtist = musicdata.getString("aboutArtist");
                 }
-
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return urlSound;
     }
-
 
     public void goToSongDetails(View view){
         Intent intent = new Intent(this, MusicDetailsActivity.class);

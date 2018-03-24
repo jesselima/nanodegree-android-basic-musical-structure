@@ -39,6 +39,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
         holder.song.setText(musicList.get(position).getSongName());
         holder.artist.setText(musicList.get(position).getArtistName());
         holder.year.setText(String.valueOf(musicList.get(position).getSongYear()));
+        
     }
 
     @Override
@@ -75,6 +76,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
                 intent.putExtra("id", musicList.get(position).getSongId());
                 intent.putExtra("song", musicList.get(position).getSongName());
                 intent.putExtra("artist", musicList.get(position).getArtistName());
+                intent.putExtra("urlArtistImage", musicList.get(position).getUrlArtistImage());
             itemView.getContext().startActivity(intent);
 
         }
