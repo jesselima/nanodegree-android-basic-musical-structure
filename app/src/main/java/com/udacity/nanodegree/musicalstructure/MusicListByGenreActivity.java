@@ -84,7 +84,9 @@ public class MusicListByGenreActivity extends AppCompatActivity {
                             musicdata.getString("artist"),
                             musicdata.getInt("year"),
                             musicdata.getString("aboutArtist"),
-                            musicdata.getString("urlArtistImage")
+                            musicdata.getString("urlArtistImage"),
+                            musicdata.getString("genres"),
+                            musicdata.getString("urlFacebookPage")
                     );
                     musicList.add(data);
                 }

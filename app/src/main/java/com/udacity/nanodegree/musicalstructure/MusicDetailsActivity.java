@@ -1,6 +1,7 @@
 package com.udacity.nanodegree.musicalstructure;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,8 +14,8 @@ import com.bumptech.glide.Glide;
 public class MusicDetailsActivity extends AppCompatActivity {
 
     TextView textViewSong, textViewArtist, textViewYear, textViewGenres, textViewRhythm, textViewDuration, textViewAboutArtist;
-    ImageView textViewArtistImage;
-    String urlArtistImage;
+    ImageView textViewArtistImage, imageViewFacebook;
+    String urlArtistImage, urlFacebookPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class MusicDetailsActivity extends AppCompatActivity {
         textViewDuration = findViewById(R.id.text_view_song_duration);
         textViewAboutArtist = findViewById(R.id.text_view_about_artist);
         textViewArtistImage = findViewById(R.id.image_view_artist);
+        imageViewFacebook = findViewById(R.id.image_facebook);
 
         Bundle musicData = getIntent().getExtras();
         textViewSong.setText(musicData.getString("song"));
@@ -43,6 +45,21 @@ public class MusicDetailsActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(urlArtistImage)
                 .into(textViewArtistImage);
+
+
+        urlFacebookPage = (musicData.getString("urlFacebookPage"));
+        imageViewFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse(urlFacebookPage);
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+
+            }
+        });
     }
+
+
+
 
 }

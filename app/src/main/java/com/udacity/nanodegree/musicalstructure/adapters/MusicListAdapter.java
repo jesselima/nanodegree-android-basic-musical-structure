@@ -38,6 +38,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
         holder.id.setText(String.valueOf(musicList.get(position).getSongId()));
         holder.song.setText(musicList.get(position).getSongName());
         holder.artist.setText(musicList.get(position).getArtistName());
+        holder.genre.setText(musicList.get(position).getsongGenre());
         holder.year.setText(String.valueOf(musicList.get(position).getSongYear()));
         
     }
@@ -49,7 +50,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
 
     public class ViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener{
 
-        private TextView id, song, artist, year;
+        private TextView id, song, artist, year, genre;
         private ImageView imageViewPlayButton;
         private ViewGroup listItemBlock;
 
@@ -65,6 +66,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
             id = itemView.findViewById(R.id.text_view_song_id);
             song = itemView.findViewById(R.id.text_view_song_name);
             artist = itemView.findViewById(R.id.text_view_artist_name);
+            genre = itemView.findViewById(R.id.text_view_music_genre);
             year = itemView.findViewById(R.id.text_view_song_year);
         }
         @Override

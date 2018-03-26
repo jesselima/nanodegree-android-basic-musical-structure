@@ -26,5 +26,7 @@
     <string name="pop">POP</string>
     <string name="reggae">REGGAE</string>
     <string name="indian">INDIAN</string>
-    <string name="r_b_and_soul"><![CDATA[R&B and soul]]></string>
+    <string name="r_b_and_soul">Soul</string>
+    <string name="genre">Genre</string>
+    <string name="find_me_on_facebook">Find me on Facebook</string>
 </resources>

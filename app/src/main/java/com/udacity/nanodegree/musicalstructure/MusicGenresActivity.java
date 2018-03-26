@@ -19,6 +19,7 @@ public class MusicGenresActivity extends AppCompatActivity {
         CardView cardRbSoul = findViewById(R.id.card_rb_and_soul);
         CardView cardReggae = findViewById(R.id.card_reggae);
         CardView cardPop = findViewById(R.id.card_pop);
+        CardView cardAllSongs = findViewById(R.id.card_all_songs);
 
         cardRock.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +77,14 @@ public class MusicGenresActivity extends AppCompatActivity {
                 String genre = "Pop";
                 Intent intent = new Intent(MusicGenresActivity.this, MusicListByGenreActivity.class);
                 intent.putExtra("genre", genre);
+                startActivity(intent);
+            }
+        });
+
+        cardAllSongs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MusicGenresActivity.this, MusicListActivity.class);
                 startActivity(intent);
             }
         });

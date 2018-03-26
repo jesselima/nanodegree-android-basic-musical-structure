@@ -193,6 +193,20 @@
                 android:textStyle="italic"
                 android:typeface="sans"/>
 
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/image_facebook"
+                android:src="@drawable/facebook"
+                android:layout_gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/find_me_on_facebook"
+                android:layout_gravity="center"
+                android:textSize="@dimen/text_size_sub_heading"
+                android:layout_marginBottom="@dimen/layout_margin16"/>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -23,8 +23,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
-// TODO: Music by genres (cards with genres and one recycler for list musics by one genre.
-// TODO: Improve layout of NowPlaying and MusicDetails.
 // TODO: Improve all layouts for landscape orientation.
 
 public class NowPlayingActivity extends AppCompatActivity {
@@ -34,7 +32,7 @@ public class NowPlayingActivity extends AppCompatActivity {
     static String urlArtistImage;
 
 
-    public static String urlSound, song, artist;
+    public static String urlSound, song, artist, urlFacebookPage;
     private String json = null;
 
     @Override
@@ -47,6 +45,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         song = musicData.getString("song");
         artist = musicData.getString("artist");
         urlArtistImage = musicData.getString("urlArtistImage");
+        urlFacebookPage = musicData.getString("urlFacebookPage");
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
@@ -228,6 +227,7 @@ public class NowPlayingActivity extends AppCompatActivity {
                     year = musicdata.getInt("year");
                     urlArtistImage = musicdata.getString("urlArtistImage");
                     aboutArtist = musicdata.getString("aboutArtist");
+                    urlFacebookPage = musicdata.getString("urlFacebookPage");
                 }
             }
         } catch (JSONException e) {
@@ -247,6 +247,7 @@ public class NowPlayingActivity extends AppCompatActivity {
             intent.putExtra("year", year);
             intent.putExtra("urlArtistImage", urlArtistImage);
             intent.putExtra("aboutArtist", aboutArtist);
+            intent.putExtra("urlFacebookPage", urlFacebookPage);
         startActivity(intent);
     }
 }
