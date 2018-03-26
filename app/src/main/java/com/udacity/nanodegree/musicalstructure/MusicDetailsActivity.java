@@ -45,9 +45,4 @@ public class MusicDetailsActivity extends AppCompatActivity {
                 .into(textViewArtistImage);
     }
 
-    public  void goToMusicByGenre(View view){
-        Intent intent = new Intent(this, MusicGenresActivity.class);
-        startActivity(intent);
-    }
-
 }

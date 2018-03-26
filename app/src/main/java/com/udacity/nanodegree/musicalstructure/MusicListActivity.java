@@ -1,9 +1,11 @@
 package com.udacity.nanodegree.musicalstructure;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.udacity.nanodegree.musicalstructure.adapters.MusicListAdapter;
 import com.udacity.nanodegree.musicalstructure.models.MusicListModel;
@@ -82,5 +84,10 @@ public class MusicListActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    public  void goToMusicByGenre(View view){
+        Intent intent = new Intent(this, MusicGenresActivity.class);
+        startActivity(intent);
     }
 }
