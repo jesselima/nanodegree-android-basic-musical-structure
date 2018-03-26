@@ -1,7 +1,9 @@
 package com.udacity.nanodegree.musicalstructure;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,6 +43,11 @@ public class MusicDetailsActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(urlArtistImage)
                 .into(textViewArtistImage);
+    }
+
+    public  void goToMusicByGenre(View view){
+        Intent intent = new Intent(this, MusicGenresActivity.class);
+        startActivity(intent);
     }
 
 }

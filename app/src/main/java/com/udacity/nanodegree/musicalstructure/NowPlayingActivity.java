@@ -23,6 +23,10 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
+// TODO: Music by genres (cards with genres and one recycler for list musics by one genre.
+// TODO: Improve layout of NowPlaying and MusicDetails.
+// TODO: Improve all layouts for landscape orientation.
+
 public class NowPlayingActivity extends AppCompatActivity {
 
     int idSong, year;

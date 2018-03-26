@@ -21,26 +21,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="Music List"
-            android:name=".MusicListActivity" >
+            android:name=".MusicListActivity"
+            android:label="Music List">
         </activity>
         <activity
+            android:name=".NowPlayingActivity"
             android:label="Now Playing"
-            android:parentActivityName=".MusicListActivity"
-            android:name=".NowPlayingActivity" >
+            android:parentActivityName=".MusicListActivity">
         </activity>
         <activity
-            android:label="Music Details"
-
-            android:name=".MusicDetailsActivity" >
+            android:name=".MusicDetailsActivity"
+            android:label="Music Details">
         </activity>
         <activity
-            android:label="Artists"
-            android:name=".ArtistsActivity" >
+            android:name=".MusicGenresActivity"
+            android:label="Musics Genres">
         </activity>
         <activity
-            android:label="Musics Genres"
-            android:name=".GenresActivity">
+            android:name=".MusicListByGenreActivity"
+            android:parentActivityName=".MusicGenresActivity"
+            android:label="Musics By Genres">
         </activity>
     </application>
 
