@@ -33,7 +33,7 @@ public class MusicGenresActivity extends AppCompatActivity {
         cardElectronic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String genre = "Eletronic";
+                String genre = "Electronic";
                 Intent intent = new Intent(MusicGenresActivity.this, MusicListByGenreActivity.class);
                 intent.putExtra("genre", genre);
                 startActivity(intent);

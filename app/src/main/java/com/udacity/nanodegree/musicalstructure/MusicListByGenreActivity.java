@@ -43,7 +43,7 @@ public class MusicListByGenreActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_view_genres);
         musicList = new ArrayList<>();
 
-        loadJson();
+        loadJson(genre);
 
         linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -53,7 +53,7 @@ public class MusicListByGenreActivity extends AppCompatActivity {
 
     }
 
-    public void loadJson(){
+    public void loadJson(String genre){
 
         json = null;
 
@@ -75,17 +75,19 @@ public class MusicListByGenreActivity extends AppCompatActivity {
             for (int i = 0; i < jsonArray.length(); i++) {
 
                 JSONObject musicdata = jsonArray.getJSONObject(i);
+                String genreObjectJSON = musicdata.getString("genres");
 
-                MusicListModel data = new MusicListModel(
-                        musicdata.getInt("id"),
-                        musicdata.getString("song"),
-                        musicdata.getString("artist"),
-                        musicdata.getInt("year"),
-                        musicdata.getString("aboutArtist"),
-                        musicdata.getString("urlArtistImage")
-                );
-                musicList.add(data);
-
+                if (genreObjectJSON.equals(genre)) {
+                    MusicListModel data = new MusicListModel(
+                            musicdata.getInt("id"),
+                            musicdata.getString("song"),
+                            musicdata.getString("artist"),
+                            musicdata.getInt("year"),
+                            musicdata.getString("aboutArtist"),
+                            musicdata.getString("urlArtistImage")
+                    );
+                    musicList.add(data);
+                }
             }
         } catch (JSONException e) {
             e.printStackTrace();
