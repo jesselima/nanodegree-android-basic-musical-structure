@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    android:layout_margin="@dimen/layout_margin16"
     android:orientation="vertical"
     tools:context="com.udacity.nanodegree.musicalstructure.MusicDetailsActivity">
 
@@ -22,6 +22,7 @@
                 android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/layout_margin8"
+                android:layout_marginTop="@dimen/layout_margin8"
                 android:src="@drawable/artist_brent"/>
             <TextView
                 android:id="@+id/text_view_song_name"
@@ -50,8 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="48dp"
                 android:layout_marginRight="48dp"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/label_year"
@@ -194,19 +194,20 @@
                 android:typeface="sans"/>
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:id="@+id/image_facebook"
                 android:src="@drawable/facebook"
                 android:layout_gravity="center"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/find_me_on_facebook"
+                android:layout_marginBottom="24dp"
                 android:layout_gravity="center"
                 android:textSize="@dimen/text_size_sub_heading"
-                android:layout_marginBottom="@dimen/layout_margin16"/>
-
+                android:text="@string/find_me_on_facebook"/>
         </LinearLayout>
+
     </ScrollView>
 </LinearLayout>

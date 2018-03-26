@@ -54,7 +54,7 @@ public class MusicGenresActivity extends AppCompatActivity {
         cardRbSoul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String genre = "RB and Soul";
+                String genre = "Soul";
                 Intent intent = new Intent(MusicGenresActivity.this, MusicListByGenreActivity.class);
                 intent.putExtra("genre", genre);
                 startActivity(intent);

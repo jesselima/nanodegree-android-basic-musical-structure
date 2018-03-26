@@ -29,4 +29,8 @@
     <string name="r_b_and_soul">Soul</string>
     <string name="genre">Genre</string>
     <string name="find_me_on_facebook">Find me on Facebook</string>
+    <string name="musical_Structure_genres">Musical Structure Udacity</string>
+    <string name="music_details">Music Details</string>
+    <string name="musics_by_genres">Musics By Genres</string>
+    <string name="music_list">Music List</string>
 </resources>

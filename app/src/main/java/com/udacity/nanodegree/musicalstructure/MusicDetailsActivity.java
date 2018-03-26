@@ -40,14 +40,13 @@ public class MusicDetailsActivity extends AppCompatActivity {
         textViewRhythm.setText(musicData.getString("rhythm"));
         textViewDuration.setText(musicData.getString("duration"));
         textViewAboutArtist.setText(musicData.getString("aboutArtist"));
+        urlFacebookPage = (musicData.getString("urlFacebookPage"));
 
         urlArtistImage = (musicData.getString("urlArtistImage"));
         Glide.with(this)
                 .load(urlArtistImage)
                 .into(textViewArtistImage);
 
-
-        urlFacebookPage = (musicData.getString("urlFacebookPage"));
         imageViewFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

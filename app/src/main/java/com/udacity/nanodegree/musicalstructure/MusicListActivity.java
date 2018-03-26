@@ -88,8 +88,4 @@ public class MusicListActivity extends AppCompatActivity {
 
     }
 
-    public  void goToMusicByGenre(View view){
-        Intent intent = new Intent(this, MusicGenresActivity.class);
-        startActivity(intent);
-    }
 }
