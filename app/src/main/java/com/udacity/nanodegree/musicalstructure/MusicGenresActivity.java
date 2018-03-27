@@ -16,7 +16,7 @@ public class MusicGenresActivity extends AppCompatActivity {
         CardView cardRock = findViewById(R.id.card_rock);
         CardView cardElectronic = findViewById(R.id.card_electronic);
         CardView cardIndian = findViewById(R.id.card_indian);
-        CardView cardRbSoul = findViewById(R.id.card_rb_and_soul);
+        CardView cardRbSoul = findViewById(R.id.card_soul);
         CardView cardReggae = findViewById(R.id.card_reggae);
         CardView cardPop = findViewById(R.id.card_pop);
         CardView cardAllSongs = findViewById(R.id.card_all_songs);
@@ -88,10 +88,5 @@ public class MusicGenresActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
     }
-
 }

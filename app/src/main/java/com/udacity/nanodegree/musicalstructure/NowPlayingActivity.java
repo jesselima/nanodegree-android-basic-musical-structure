@@ -31,7 +31,6 @@ public class NowPlayingActivity extends AppCompatActivity {
     String genres, rhythm, duration, aboutArtist;
     static String urlArtistImage;
 
-
     public static String urlSound, song, artist, urlFacebookPage;
     private String json = null;
 

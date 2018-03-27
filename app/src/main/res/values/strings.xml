@@ -33,4 +33,9 @@
     <string name="music_details">Music Details</string>
     <string name="musics_by_genres">Musics By Genres</string>
     <string name="music_list">Music List</string>
+    <string name="_2017">2017</string>
+    <string name="electronic">Electronic</string>
+    <string name="all_songs">ALL SONGS</string>
+    <string name="image_splash_screen">Image Splash Screen</string>
+    <string name="songs">\u0020Songs</string>
 </resources>

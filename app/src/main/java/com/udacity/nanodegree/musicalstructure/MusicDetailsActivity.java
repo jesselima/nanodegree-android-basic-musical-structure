@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-
 public class MusicDetailsActivity extends AppCompatActivity {
 
     TextView textViewSong, textViewArtist, textViewYear, textViewGenres, textViewRhythm, textViewDuration, textViewAboutArtist;
@@ -53,12 +52,7 @@ public class MusicDetailsActivity extends AppCompatActivity {
                 Uri uri = Uri.parse(urlFacebookPage);
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
-
             }
         });
     }
-
-
-
-
 }

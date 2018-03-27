@@ -1,11 +1,10 @@
 package com.udacity.nanodegree.musicalstructure;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
+import android.widget.Toast;
 
 import com.udacity.nanodegree.musicalstructure.adapters.MusicListAdapter;
 import com.udacity.nanodegree.musicalstructure.models.MusicListModel;
@@ -32,6 +31,8 @@ public class MusicListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_list);
+
+        Toast.makeText(this, getString(R.string.all_songs), Toast.LENGTH_SHORT).show();
 
         recyclerView = findViewById(R.id.recycler_view);
         musicList = new ArrayList<>();
@@ -80,12 +81,9 @@ public class MusicListActivity extends AppCompatActivity {
                         musicdata.getString("urlFacebookPage")
                 );
                 musicList.add(data);
-
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
     }
-
 }

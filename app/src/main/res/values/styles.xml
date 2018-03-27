@@ -26,6 +26,14 @@
         <item name="android:layout_marginRight">@dimen/layout_margin16</item>
     </style>
 
+    <style name="cardGenresLayout">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/layout_margin8</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:backgroundTint">@color/cardBackgroundBlack</item>
+    </style>
+
 
 
 

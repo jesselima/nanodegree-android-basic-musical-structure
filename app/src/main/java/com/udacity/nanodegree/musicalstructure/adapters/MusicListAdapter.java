@@ -40,7 +40,6 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
         holder.artist.setText(musicList.get(position).getArtistName());
         holder.genre.setText(musicList.get(position).getsongGenre());
         holder.year.setText(String.valueOf(musicList.get(position).getSongYear()));
-        
     }
 
     @Override
@@ -69,6 +68,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
             genre = itemView.findViewById(R.id.text_view_music_genre);
             year = itemView.findViewById(R.id.text_view_song_year);
         }
+
         @Override
         public void onClick(View itemView) {
 
@@ -80,7 +80,6 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
                 intent.putExtra("artist", musicList.get(position).getArtistName());
                 intent.putExtra("urlArtistImage", musicList.get(position).getUrlArtistImage());
             itemView.getContext().startActivity(intent);
-
         }
     }
 }

@@ -38,9 +38,9 @@
                 android:id="@+id/text_view_artist_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/layout_margin8"
                 android:layout_gravity="center"
-                android:text="Artist Name"
+                android:layout_marginBottom="@dimen/layout_margin8"
+                android:text="@string/artist_name"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/text_size_headline"
                 android:textStyle="italic"
@@ -52,7 +52,6 @@
                 android:layout_marginLeft="48dp"
                 android:layout_marginRight="48dp"
                 android:orientation="vertical">
-
                 <TextView
                     android:id="@+id/label_year"
                     android:layout_width="wrap_content"
@@ -71,17 +70,14 @@
                     android:layout_marginBottom="4dp"
                     android:layout_marginEnd="8dp"
                     android:layout_toStartOf="@id/label_year"
-                    android:text="2017"
+                    android:text="@string/_2017"
                     android:textSize="@dimen/text_size_sub_heading"
                     android:textStyle="italic"/>
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/divider"
-                    android:layout_below="@+id/text_view_song_year"/>
-
-
+                    android:layout_below="@+id/text_view_song_year"
+                    android:background="@color/divider"/>
                 <TextView
                     android:id="@+id/label_genre"
                     android:layout_width="wrap_content"
@@ -89,7 +85,7 @@
                     android:layout_below="@id/label_year"
                     android:layout_marginBottom="4dp"
                     android:layout_marginStart="8dp"
-                    android:text="Genre"
+                    android:text="@string/genre"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/text_size_sub_heading"
                     android:textStyle="bold"/>
@@ -102,15 +98,14 @@
                     android:layout_marginBottom="4dp"
                     android:layout_marginEnd="8dp"
                     android:layout_toStartOf="@id/label_genre"
-                    android:text="Eletronic"
+                    android:text="@string/electronic"
                     android:textSize="@dimen/text_size_sub_heading"
                     android:textStyle="italic"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/divider"
-                    android:layout_below="@+id/text_view_song_genres"/>
-
+                    android:layout_below="@+id/text_view_song_genres"
+                    android:background="@color/divider"/>
                 <TextView
                     android:id="@+id/label_rhythm"
                     android:layout_width="wrap_content"
@@ -137,9 +132,8 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/divider"
-                    android:layout_below="@+id/text_view_song_rhythm"/>
-
+                    android:layout_below="@+id/text_view_song_rhythm"
+                    android:background="@color/divider"/>
                 <TextView
                     android:id="@+id/label_duration"
                     android:layout_width="wrap_content"
@@ -163,50 +157,46 @@
                     android:text="@string/_0_00"
                     android:textSize="@dimen/text_size_sub_heading"
                     android:textStyle="italic"/>
-
             </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/layout_margin16"
                 android:layout_marginBottom="@dimen/layout_margin16"
+                android:layout_marginTop="@dimen/layout_margin16"
+                android:gravity="center"
                 android:text="@string/about_artist"
+                android:textAllCaps="true"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/text_size_sub_heading"
                 android:textStyle="bold"
-                android:textAllCaps="true"
                 android:typeface="sans"/>
-
             <TextView
                 android:id="@+id/text_view_about_artist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/layout_margin8"
-                android:paddingRight="@dimen/layout_margin8"
                 android:layout_marginBottom="24dp"
                 android:gravity="center"
+                android:paddingLeft="@dimen/layout_margin8"
+                android:paddingRight="@dimen/layout_margin8"
                 android:text="@string/about_artist"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/text_size_sub_heading"
                 android:textStyle="italic"
                 android:typeface="sans"/>
-
             <ImageView
+                android:id="@+id/image_facebook"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:id="@+id/image_facebook"
-                android:src="@drawable/facebook"
-                android:layout_gravity="center"/>
-
+                android:layout_gravity="center"
+                android:src="@drawable/facebook"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
                 android:layout_gravity="center"
-                android:textSize="@dimen/text_size_sub_heading"
-                android:text="@string/find_me_on_facebook"/>
+                android:layout_marginBottom="24dp"
+                android:text="@string/find_me_on_facebook"
+                android:textSize="@dimen/text_size_sub_heading"/>
         </LinearLayout>
 
     </ScrollView>
