@@ -38,4 +38,6 @@
     <string name="all_songs">ALL SONGS</string>
     <string name="image_splash_screen">Image Splash Screen</string>
     <string name="songs">\u0020Songs</string>
+    <string name="music_library">Music Library</string>
+    <string name="music_library_activity_description">Select a music genre to see music by genre or click ALL SONGS to see the full library</string>
 </resources>

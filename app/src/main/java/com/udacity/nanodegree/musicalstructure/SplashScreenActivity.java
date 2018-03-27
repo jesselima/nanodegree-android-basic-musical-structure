@@ -22,7 +22,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     private void goToMusicListActivity(){
-        Intent intent = new Intent(this, MusicGenresActivity.class);
+        Intent intent = new Intent(this, MusicLibraryActivity.class);
         startActivity(intent);
         finish();
     }

@@ -3,7 +3,7 @@
     <color name="colorPrimary">#1e1e1e</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="cardBackground">#0b2e3d</color>
+    <color name="cardBackground">#e6e6e6</color>
     <color name="cardBackgroundBlack">#000000</color>
     <color name="buttonText">#FFFFFF</color>
     <color name="textColorWhite">#FFFFFF</color>

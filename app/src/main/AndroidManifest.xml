@@ -22,31 +22,22 @@
         </activity>
         <activity
             android:name=".MusicListActivity"
-            android:label="@string/music_list">
-
-        </activity>
+            android:label="@string/music_library"></activity>
         <activity
             android:name=".NowPlayingActivity"
             android:label="@string/now_playing"
-            android:parentActivityName=".MusicListActivity">
-
-        </activity>
+            android:parentActivityName=".MusicListActivity"></activity>
         <activity
             android:name=".MusicDetailsActivity"
-            android:label="@string/music_details">
-
-        </activity>
+            android:label="@string/music_details"></activity>
         <activity
-            android:name=".MusicGenresActivity"
-            android:label="@string/musical_Structure_genres">
-
-        </activity>
+            android:name=".MusicLibraryActivity"
+            android:label="@string/musical_Structure_genres"></activity>
         <activity
             android:name=".MusicListByGenreActivity"
             android:label="@string/musics_by_genres"
-            android:parentActivityName=".MusicGenresActivity">
-
-        </activity>
+            android:parentActivityName=".MusicLibraryActivity"></activity>
+        <activity android:name=".TestActivity"></activity>
     </application>
 
 </manifest>
