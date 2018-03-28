@@ -7,6 +7,10 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Final Comment. Project ready for delivery.
+ */
+
 public class MusicLibraryActivity extends AppCompatActivity {
 
     CardView cardViewDescriptionLibrary;
