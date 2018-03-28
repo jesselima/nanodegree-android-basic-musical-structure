@@ -3,16 +3,134 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/layout_margin16"
     android:orientation="vertical"
     tools:context=".PaymentActivity">
 
-    <!-- Holds the Android Pay button -->
-    <FrameLayout
-        android:id="@+id/wallet_button_holder"
-        android:layout_height="48dp"
-        android:layout_width="200dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_margin16"
+                    android:text="@string/subscribe_to_pro_message"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_size_headline"
+                    android:textStyle="bold" />
+
+                <LinearLayout style="@style/featuresLinearLayout">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_check_box_black_24dp"/>
+                    <TextView
+                        style="@style/featuresText"
+                        android:text="@string/no_ads" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/featuresLinearLayout">
+                    <ImageView android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_check_box_black_24dp"/>
+                    <TextView
+                        style="@style/featuresText"
+                        android:text="@string/create_and_personalize_playlists" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/featuresLinearLayout">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_check_box_black_24dp"/>
+                    <TextView
+                        style="@style/featuresText"
+                        android:text="@string/create_groups_with_friends_and_family" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/featuresLinearLayout">
+                    <ImageView android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_check_box_black_24dp"/>
+                    <TextView
+                        style="@style/featuresText"
+                        android:text="@string/collaborative_playlists" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/featuresLinearLayout">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_check_box_black_24dp"/>
+                    <TextView
+                        style="@style/featuresText"
+                        android:text="@string/access_to_future_features" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_sub_heading"
+                    android:layout_marginBottom="4dp"
+                    android:textStyle="bold"
+                    android:text="@string/select_billing_period"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/annual"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/monthly"/>
+                    </RadioGroup>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_sub_heading"
+                    android:layout_marginBottom="4dp"
+                    android:textStyle="bold"
+                    android:text="@string/fill_the_form"/>
+                <com.simplify.android.sdk.CardEditor
+                    android:id="@+id/card_editor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    style="@style/buttonDefault"
+                    android:text="@string/complete_payment"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

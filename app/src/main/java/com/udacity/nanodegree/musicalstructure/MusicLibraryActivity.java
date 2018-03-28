@@ -20,7 +20,7 @@ public class MusicLibraryActivity extends AppCompatActivity {
         CardView cardRbSoul = findViewById(R.id.card_soul);
         CardView cardReggae = findViewById(R.id.card_reggae);
         CardView cardPop = findViewById(R.id.card_pop);
-        //Button btnAllSongs = findViewById(R.id.card_all_songs);
+        Button btnGoPro = findViewById(R.id.btn_subscribe);
 
         cardRock.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,12 +82,12 @@ public class MusicLibraryActivity extends AppCompatActivity {
             }
         });
 
-//        btnAllSongs.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MusicLibraryActivity.this, MusicListActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        btnGoPro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MusicLibraryActivity.this, PaymentActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

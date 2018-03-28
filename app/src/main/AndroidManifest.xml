@@ -37,8 +37,10 @@
             android:name=".MusicListByGenreActivity"
             android:label="@string/musics_by_genres"
             android:parentActivityName=".MusicLibraryActivity"/>
-        <activity android:name=".PaymentActivity"/>
-
+        <activity
+            android:name=".PaymentActivity"
+            android:label="Subscribe PRO Plan"
+            android:parentActivityName=".MusicLibraryActivity"/>
         <meta-data
             android:name="com.google.android.gms.wallet.api.enabled"
             android:value="true" />

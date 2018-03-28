@@ -53,6 +53,23 @@
     <string name="top_playlists">Top Playlists</string>
     <string name="recent_albuns">Recent Albuns</string>
     <string name="listen_by_activity">Listen by Activity</string>
-    <string name="get_pro_plan_card">Get our PRO Plan today! Listen all music without ads and get access to all features.</string>
-    <string name="subscribe_to_pro_now">SUBSCRIBE TO PRO NOW</string>
+    <string name="get_pro_plan_card">Get PRO access today! Get 20% OFF in annual billing.</string>
+    <string name="subscribe_to_pro_now">GO PRO NOW</string>
+    <string name="top_albums">Top Albums</string>
+    <string name="top_playlist">Top Playlist</string>
+    <string name="party">PARTY</string>
+    <string name="relax">RELAX</string>
+    <string name="workout">WORKOUT</string>
+    <string name="romantic">ROMANTIC</string>
+    <string name="no_ads">No Ads.</string>
+    <string name="create_and_personalize_playlists">Create and personalize playlists.</string>
+    <string name="create_groups_with_friends_and_family">Create groups with friends and family.</string>
+    <string name="collaborative_playlists">Collaborative playlists.</string>
+    <string name="access_to_future_features">Access to future features.</string>
+    <string name="subscribe_to_pro_message">Subscribe to PRO and get access to all features available.</string>
+    <string name="select_billing_period">Select billing period.  Get 20% OFF in Annual Subscription.</string>
+    <string name="annual">Annual $48.00</string>
+    <string name="monthly">Monthly $5.00</string>
+    <string name="fill_the_form">Fill the form to complete your payment:</string>
+    <string name="complete_payment">Complete Payment</string>
 </resources>
