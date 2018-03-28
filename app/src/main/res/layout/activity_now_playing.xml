@@ -1,11 +1,49 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.udacity.nanodegree.musicalstructure.NowPlayingActivity"
     tools:ignore="MergeRootFrame">
-
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_description_now_playing"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/layout_margin8"
+        android:layout_marginRight="@dimen/layout_margin8"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/cardBackgroundBlue"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/layout_margin8"
+                android:text="@string/now_activity_description"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_size_sub_heading"
+                android:textStyle="italic"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin8"
+                android:padding="@dimen/layout_margin8"
+                android:textAlignment="center"
+                android:text="@string/click_to_hide_the_message"
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                android:textColor="@color/textHideMessage"
+                android:textSize="@dimen/text_size_body"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
         <Button
         style="@style/buttonDefault"
         android:id="@+id/btn_song_details"

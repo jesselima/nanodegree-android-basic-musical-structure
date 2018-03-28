@@ -3,19 +3,17 @@
     <color name="colorPrimary">#1e1e1e</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FF5252</color>
-    <!--<color name="colorPrimary">#006ec6</color>-->
-    <!--<color name="colorPrimaryDark">#115496</color>-->
-    <!--<color name="colorAccent">#FF5252</color>-->
     <color name="colorPrimaryLight">#BBDEFB</color>
     <color name="cardBackground">#c9e6e6e6</color>
     <color name="cardBackgroundBlue">#d9e8ff</color>
     <color name="cardBackgroundBlack">#000000</color>
-    <!--<color name="cardBackgroundBlack">#006ec6</color>-->
     <color name="buttonText">#FFFFFF</color>
     <color name="textColorWhite">#FFFFFF</color>
     <color name="textColorCardHighlights">#565656</color>
     <color name="textColorBlack">#000000</color>
     <color name="divider">#cfcfcf</color>
     <color name="buttonAlertBackground">#006ec6</color>
+    <color name="textHideMessage">#006ec6</color>
     <color name="buttonDefaultGrey">#313131</color>
+    <color name="colorAlpha0">#85ffffff</color>
 </resources>

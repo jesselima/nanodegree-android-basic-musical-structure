@@ -2,8 +2,10 @@ package com.udacity.nanodegree.musicalstructure;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Toast;
 
 import com.udacity.nanodegree.musicalstructure.adapters.MusicListAdapter;
@@ -24,13 +26,21 @@ public class MusicListActivity extends AppCompatActivity {
     private LinearLayoutManager linearLayoutManager;
     private MusicListAdapter adapter;
     private List<MusicListModel> musicList;
-
     private String json = null;
+    CardView cardViewDescriptionLibrary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_list);
+
+        cardViewDescriptionLibrary = findViewById(R.id.card_description_music_list);
+        cardViewDescriptionLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cardViewDescriptionLibrary.setVisibility(View.GONE);
+            }
+        });
 
         Toast.makeText(this, getString(R.string.all_songs), Toast.LENGTH_SHORT).show();
 
@@ -47,6 +57,19 @@ public class MusicListActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * This method read the local file musicdata.json and all the songs available on the JSON file.
+     * All the is loaded in a musicList. It's a List<MusicListModel> object. This Object(musicList) with JSON data
+     * is loaded in a Adapter object. This object Adapter is used in the RecyclerView.
+     *
+     * The code below had as a guideline this resources below.
+     *
+     * How to parse local JSON file in Android Studio | JSON Filter Data Tutorial
+     *      https://www.youtube.com/watch?v=h71Ia9iFWfI
+     * How to Parse a Json Using Volley - Android Studio Tutorial
+     *      https://www.youtube.com/watch?v=y2xtLqP8dSQ
+     *      https://codinginflow.com/code-examples/android/volley-json-parsing
+     */
     public void loadJson(){
 
         json = null;

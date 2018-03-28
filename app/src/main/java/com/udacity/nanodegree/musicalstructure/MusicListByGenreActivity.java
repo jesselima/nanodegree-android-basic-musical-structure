@@ -2,8 +2,10 @@ package com.udacity.nanodegree.musicalstructure;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.Toast;
 
 import com.udacity.nanodegree.musicalstructure.adapters.MusicListAdapter;
@@ -24,15 +26,21 @@ public class MusicListByGenreActivity extends AppCompatActivity {
     private LinearLayoutManager linearLayoutManager;
     private MusicListAdapter adapter;
     private List<MusicListModel> musicList;
-
     private String json = null;
-
     String genre;
+    CardView cardViewDescriptionLibrary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_list_by_genre);
+        cardViewDescriptionLibrary = findViewById(R.id.card_description_music_list_by_genre);
+        cardViewDescriptionLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cardViewDescriptionLibrary.setVisibility(View.GONE);
+            }
+        });
 
         Bundle musicData = getIntent().getExtras();
             genre = musicData.getString("genre");
@@ -52,6 +60,7 @@ public class MusicListByGenreActivity extends AppCompatActivity {
 
     }
 
+    // This method read the local file musicdata.json and only the songs with the genre selected by the user in MusicLibraryActivity.
     public void loadJson(String genre){
 
         json = null;

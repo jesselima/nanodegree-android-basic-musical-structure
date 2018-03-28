@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,10 +17,14 @@ public class MusicDetailsActivity extends AppCompatActivity {
     ImageView textViewArtistImage, imageViewFacebook;
     String urlArtistImage, urlFacebookPage;
 
+    CardView cardViewDescriptionLibrary;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_details);
+
+        cardViewDescriptionLibrary = findViewById(R.id.card_description_music_details);
 
         textViewSong = findViewById(R.id.text_view_song_name);
         textViewArtist = findViewById(R.id.text_view_artist_name);
@@ -30,6 +35,7 @@ public class MusicDetailsActivity extends AppCompatActivity {
         textViewAboutArtist = findViewById(R.id.text_view_about_artist);
         textViewArtistImage = findViewById(R.id.image_view_artist);
         imageViewFacebook = findViewById(R.id.image_facebook);
+
 
         Bundle musicData = getIntent().getExtras();
         textViewSong.setText(musicData.getString("song"));
@@ -52,6 +58,13 @@ public class MusicDetailsActivity extends AppCompatActivity {
                 Uri uri = Uri.parse(urlFacebookPage);
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
+            }
+        });
+
+        cardViewDescriptionLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cardViewDescriptionLibrary.setVisibility(View.GONE);
             }
         });
     }

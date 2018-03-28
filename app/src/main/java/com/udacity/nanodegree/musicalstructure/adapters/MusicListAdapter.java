@@ -17,6 +17,10 @@ import com.udacity.nanodegree.musicalstructure.R;
 
 import java.util.List;
 
+/**
+ * The code in this class had the project below as a guide line to create a RecyclerView properly.
+ * https://github.com/miskoajkula/CardViewPhpMysql.git
+ */
 
 public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.ViewHolder> {
 
@@ -87,6 +91,11 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
             });
         }
 
+        /**
+         * When a item in the list of songs is clicked this method get the items values such position, put then these values in a Intent object and and send then to NowPlayingActivity.
+         *
+         * @param itemView
+         */
         @Override
         public void onClick(View itemView) {
 

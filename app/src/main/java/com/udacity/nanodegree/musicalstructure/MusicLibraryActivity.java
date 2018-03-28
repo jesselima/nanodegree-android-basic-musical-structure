@@ -9,10 +9,14 @@ import android.widget.Button;
 
 public class MusicLibraryActivity extends AppCompatActivity {
 
+    CardView cardViewDescriptionLibrary;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_library);
+
+        cardViewDescriptionLibrary = findViewById(R.id.card_description_music_library);
 
         CardView cardRock = findViewById(R.id.card_rock);
         CardView cardElectronic = findViewById(R.id.card_electronic);
@@ -21,6 +25,7 @@ public class MusicLibraryActivity extends AppCompatActivity {
         CardView cardReggae = findViewById(R.id.card_reggae);
         CardView cardPop = findViewById(R.id.card_pop);
         Button btnGoPro = findViewById(R.id.btn_subscribe);
+        Button btnAllSongs = findViewById(R.id.card_all_songs);
 
         cardRock.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +92,21 @@ public class MusicLibraryActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MusicLibraryActivity.this, PaymentActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btnAllSongs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MusicLibraryActivity.this, MusicListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cardViewDescriptionLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cardViewDescriptionLibrary.setVisibility(View.GONE);
             }
         });
     }

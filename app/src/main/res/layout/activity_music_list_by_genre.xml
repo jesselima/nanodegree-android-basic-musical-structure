@@ -1,37 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="@dimen/layout_margin16"
     tools:context="com.udacity.nanodegree.musicalstructure.MusicListByGenreActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_margin16">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_polygon_guitar_white"/>
         <android.support.v7.widget.CardView
+            android:id="@+id/card_description_music_list_by_genre"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/layout_margin16"
             android:layout_marginLeft="@dimen/layout_margin8"
             android:layout_marginRight="@dimen/layout_margin8"
+            android:layout_marginTop="@dimen/layout_margin8"
+            android:layout_marginBottom="@dimen/layout_margin8"
             android:backgroundTint="@color/cardBackgroundBlue"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/layout_margin8"
                     android:padding="@dimen/layout_margin8"
                     android:text="@string/music_list_by_genre_description"
                     android:textAlignment="center"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/text_size_sub_heading"
                     android:textStyle="italic"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_margin8"
+                    android:padding="@dimen/layout_margin8"
+                    android:textAlignment="center"
+                    android:text="@string/click_to_hide_the_message"
+                    android:layout_gravity="bottom"
+                    android:gravity="bottom"
+                    android:textColor="@color/textHideMessage"
+                    android:textSize="@dimen/text_size_body"
+                    android:textStyle="bold"/>
+            </LinearLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_genres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            android:layout_marginTop="100dp" />
-</FrameLayout>
+            android:scrollbars="vertical" />
+    </RelativeLayout>
+
+</RelativeLayout>

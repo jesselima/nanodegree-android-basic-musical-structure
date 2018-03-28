@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,12 +34,22 @@ public class NowPlayingActivity extends AppCompatActivity {
     public static String urlSound, song, artist, urlFacebookPage;
     private String json = null;
     Button btnSongDetails;
+    CardView cardViewDescriptionLibrary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_playing);
 
+        cardViewDescriptionLibrary = findViewById(R.id.card_description_now_playing);
+        cardViewDescriptionLibrary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cardViewDescriptionLibrary.setVisibility(View.GONE);
+            }
+        });
+
+        // Get data sent from NowPlayingActivity
         Bundle musicData = getIntent().getExtras();
         idSong = musicData.getInt("id");
         song = musicData.getString("song");
@@ -61,6 +72,8 @@ public class NowPlayingActivity extends AppCompatActivity {
             }
         });
     }
+
+
 
     public static class PlaceholderFragment extends Fragment implements View.OnClickListener {
 
@@ -111,11 +124,13 @@ public class NowPlayingActivity extends AppCompatActivity {
         }
 
         /**
+         * This method inflates the now_playing.xml which holds all the View inside of it. Then
+         * The method creates a ClickListener for each object. Each object execute a block of code in the method onClick
          *
-         * @param inflater uses the method inflate to inflate the now_playing layout inside the ViewGroup container
-         * @param container is the FrameLayout that will hold all the child views in now play activity
+         * @param inflater uses the method inflate (from LayoutInflater class) to inflate the now_playing layout inside the FrameLayout with R.id.container at activity_now_playing.xml.
+         * @param container is the FrameLayout that will hold all the child views in now_playing.xml and inflates on NowPlayingActivity.
          * @param savedInstanceState ...
-         * @return
+         * @return rootView. It's a object that holds all the Views references in NowPlayingActivity.
          */
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -148,8 +163,6 @@ public class NowPlayingActivity extends AppCompatActivity {
             return rootView;
         }
 
-
-
         @Override
         public void onResume(){
             super.onResume();
@@ -165,7 +178,6 @@ public class NowPlayingActivity extends AppCompatActivity {
             Glide.with(this)
                     .load(urlArtistImage)
                     .into(artistImage);
-
         }
 
         @Override
@@ -201,13 +213,11 @@ public class NowPlayingActivity extends AppCompatActivity {
                     Toast.makeText(getContext(), R.string.shuffle_clicked, Toast.LENGTH_SHORT).show();
                     break;
             }
-
         }
-
     }
 
     /**
-     *
+     * This method gets the music ID of the selected song in MusicListActivity ou MusicListByGenreActivity and allows the user to play the selected song.
      * @param idSong is the id of the song.
      * @return the url of the sound file.
      */
@@ -253,8 +263,6 @@ public class NowPlayingActivity extends AppCompatActivity {
         }
         return urlSound;
     }
-
-
 
     public void goToSongDetails(){
         Intent intent = new Intent(this, MusicDetailsActivity.class);

@@ -41,11 +41,6 @@
     <string name="image_splash_screen">Image Splash Screen</string>
     <string name="songs">\u0020Songs</string>
     <string name="music_library">Music Library</string>
-    <string name="music_library_activity_description">Select a music genre to see music by genre or click ALL SONGS to see the full library.</string>
-    <string name="music_details_activity_description">See music details below. You can also see the artist Facebook page clicking on the Facebook icon at the bottom content.</string>
-    <string name="music_list_activity_description">Here You can see all songs available in the app. Just click at the sound you want listen to go to now playing.</string>
-    <string name="music_list_by_genre_description">Here You can the songs filtered by the genre you have selected. Just click at the sound you want listen to go to now playing.</string>
-    <string name="now_activity_description">Click play button to listen the music. Internet connection is required. You can pause and use seek bar. Click on SONG DETAILS button to see more info about the music.\n IMPORTANT: This activity uses Android Open Source Audio Player (OpenMXPlayer) from Pocket Magic. The library is on the openMXPlayer package folder.</string>
     <string name="song_details">SONG DETAILS</string>
     <string name="playing">Playing\u0020</string>
     <string name="adde_to_your_favorites">Added to your favorites.</string>
@@ -72,4 +67,13 @@
     <string name="monthly">Monthly $5.00</string>
     <string name="fill_the_form">Fill the form to complete your payment:</string>
     <string name="complete_payment">Complete Payment</string>
+    <string name="card_ok">Card Validated!</string>
+    <string name="card_not_ok">Ops! Something went wrong!</string>
+    <string name="payment_activity_description">Here you can see all features available at the PRO plan and validate the Payment. The API Library used here was Simplify (www.simplify.com) \n The library provides a View com.simplify.android.sdk.CardEditor that already provide the validation of the input card data. PaymentActivity.java is ready do be used according to Simplify documentation. It\'s checks if the card is valid or not. The API key points to a Sandbox I create in My account for tests purposes.</string>
+    <string name="music_library_activity_description">Select a music genre to see music by genre or click ALL SONGS to see the full library.</string>
+    <string name="music_details_activity_description">See music details below. You can also see the artist Facebook page clicking on the Facebook icon at the bottom content.</string>
+    <string name="music_list_activity_description">Here You can see all songs available in the app. Just click at the sound you want listen to go to now playing.</string>
+    <string name="music_list_by_genre_description">Here You can the songs filtered by the genre you have selected. Just click at the sound you want listen to go to now playing.</string>
+    <string name="now_activity_description">Click play button to listen the music. Internet connection is required. You can pause and use seek bar. Click on SONG DETAILS button to see more info about the music.\n IMPORTANT: This activity uses Android Open Source Audio Player (OpenMXPlayer) from Pocket Magic. The library is on the openMXPlayer package folder.</string>
+    <string name="click_to_hide_the_message">CLICK ON THIS CARD TO HIDE THE MESSAGE</string>
 </resources>

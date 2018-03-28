@@ -44,16 +44,6 @@
         <item name="android:backgroundTint">@color/cardBackgroundBlack</item>
     </style>
 
-    <!--<style name="cardLayoutLarge">-->
-        <!--<item name="android:layout_width">wrap_content</item>-->
-        <!--<item name="android:layout_height">wrap_content</item>-->
-        <!--<item name="android:layout_marginBottom">@dimen/layout_margin16</item>-->
-        <!--<item name="android:layout_marginLeft">@dimen/layout_margin8</item>-->
-        <!--<item name="android:layout_marginRight">@dimen/layout_margin8</item>-->
-        <!--<item name="android:layout_marginTop">@dimen/layout_margin8</item>-->
-        <!--<item name="android:backgroundTint">@color/cardBackground</item>-->
-    <!--</style>-->
-
     <style name="cardHighlights">
         <item name="android:layout_width">120dp</item>
         <item name="android:layout_height">100dp</item>
@@ -73,6 +63,7 @@
         <item name="android:layout_marginBottom">@dimen/layout_margin8</item>
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/textColorCardHighlights</item>
+        <item name="android:backgroundTint">@color/colorAlpha0</item>
         <item name="android:textSize">@dimen/text_size_sub_heading</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -114,6 +105,5 @@
         <item name="android:textSize">@dimen/text_size_sub_heading</item>
         <item name="android:layout_marginStart">@dimen/layout_margin8</item>
     </style>
-
 
 </resources>
