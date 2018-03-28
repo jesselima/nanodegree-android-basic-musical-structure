@@ -4,7 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.udacity.nanodegree.musicalstructure.NowPlayingActivity"
-    tools:ignore="MergeRootFrame" />
+    tools:ignore="MergeRootFrame">
+
+        <Button
+        style="@style/buttonDefault"
+        android:id="@+id/btn_song_details"
+        android:layout_marginBottom="8dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/song_details"/>
+
+</FrameLayout>
 
 
 

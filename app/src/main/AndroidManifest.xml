@@ -22,22 +22,26 @@
         </activity>
         <activity
             android:name=".MusicListActivity"
-            android:label="@string/music_library"></activity>
+            android:label="@string/music_library"/>
         <activity
             android:name=".NowPlayingActivity"
             android:label="@string/now_playing"
-            android:parentActivityName=".MusicListActivity"></activity>
+            android:parentActivityName=".MusicListActivity"/>
         <activity
             android:name=".MusicDetailsActivity"
-            android:label="@string/music_details"></activity>
+            android:label="@string/music_details"/>
         <activity
             android:name=".MusicLibraryActivity"
-            android:label="@string/musical_Structure_genres"></activity>
+            android:label="@string/musical_Structure_genres"/>
         <activity
             android:name=".MusicListByGenreActivity"
             android:label="@string/musics_by_genres"
-            android:parentActivityName=".MusicLibraryActivity"></activity>
-        <activity android:name=".TestActivity"></activity>
+            android:parentActivityName=".MusicLibraryActivity"/>
+        <activity android:name=".PaymentActivity"/>
+
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
     </application>
 
 </manifest>

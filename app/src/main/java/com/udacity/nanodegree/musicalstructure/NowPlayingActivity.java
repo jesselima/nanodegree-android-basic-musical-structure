@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -23,16 +24,15 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 
-// TODO: Improve all layouts for landscape orientation.
 
 public class NowPlayingActivity extends AppCompatActivity {
 
     int idSong, year;
     String genres, rhythm, duration, aboutArtist;
     static String urlArtistImage;
-
     public static String urlSound, song, artist, urlFacebookPage;
     private String json = null;
+    Button btnSongDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +52,14 @@ public class NowPlayingActivity extends AppCompatActivity {
         }
 
         loadJson(idSong);
+
+        btnSongDetails = findViewById(R.id.btn_song_details);
+        btnSongDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSongDetails();
+            }
+        });
     }
 
     public static class PlaceholderFragment extends Fragment implements View.OnClickListener {
@@ -122,6 +130,8 @@ public class NowPlayingActivity extends AppCompatActivity {
             (rootView.findViewById(R.id.btn_stop)).setOnClickListener(this);
             (rootView.findViewById(R.id.btn_previous)).setOnClickListener(this);
             (rootView.findViewById(R.id.btn_next)).setOnClickListener(this);
+            (rootView.findViewById(R.id.btn_back_repeat)).setOnClickListener(this);
+            (rootView.findViewById(R.id.btn_shuffle)).setOnClickListener(this);
 
             seekbar = rootView.findViewById(R.id.seekbar);
             seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -138,6 +148,8 @@ public class NowPlayingActivity extends AppCompatActivity {
             return rootView;
         }
 
+
+
         @Override
         public void onResume(){
             super.onResume();
@@ -153,6 +165,7 @@ public class NowPlayingActivity extends AppCompatActivity {
             Glide.with(this)
                     .load(urlArtistImage)
                     .into(artistImage);
+
         }
 
         @Override
@@ -163,7 +176,7 @@ public class NowPlayingActivity extends AppCompatActivity {
                     playerEvents.setDataSource(urlSound);
                     playerEvents.play();
                     seekBarTitle.setText(R.string.now_playing);
-                    Toast.makeText(getContext(), "Playing " + song, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),getString(R.string.playing) + song, Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.btn_pause:
                     playerEvents.pause();
@@ -180,6 +193,12 @@ public class NowPlayingActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_next:
                     Toast.makeText(getContext(), R.string.next_clicked, Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.btn_back_repeat:
+                    Toast.makeText(getContext(), R.string.repeat_clicked, Toast.LENGTH_SHORT).show();
+                    break;
+                case R.id.btn_shuffle:
+                    Toast.makeText(getContext(), R.string.shuffle_clicked, Toast.LENGTH_SHORT).show();
                     break;
             }
 
@@ -235,7 +254,9 @@ public class NowPlayingActivity extends AppCompatActivity {
         return urlSound;
     }
 
-    public void goToSongDetails(View view){
+
+
+    public void goToSongDetails(){
         Intent intent = new Intent(this, MusicDetailsActivity.class);
             intent.putExtra("song", idSong);
             intent.putExtra("song", song);

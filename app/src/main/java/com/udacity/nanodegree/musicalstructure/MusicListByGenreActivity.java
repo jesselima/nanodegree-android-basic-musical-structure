@@ -49,6 +49,7 @@ public class MusicListByGenreActivity extends AppCompatActivity {
         adapter = new MusicListAdapter(this, musicList);
         recyclerView.setAdapter(adapter);
 
+
     }
 
     public void loadJson(String genre){

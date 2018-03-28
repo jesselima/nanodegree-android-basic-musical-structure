@@ -3,13 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/layout_margin16"
     tools:context="com.udacity.nanodegree.musicalstructure.MusicListByGenreActivity">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/layout_margin16"
+            android:layout_marginLeft="@dimen/layout_margin8"
+            android:layout_marginRight="@dimen/layout_margin8"
+            android:backgroundTint="@color/cardBackgroundBlue"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_margin8"
+                    android:padding="@dimen/layout_margin8"
+                    android:text="@string/music_list_by_genre_description"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_sub_heading"
+                    android:textStyle="italic"/>
+        </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view_genres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollbars="vertical"
-            android:layout_marginTop="4dp" />
+            android:layout_marginTop="100dp" />
 </FrameLayout>

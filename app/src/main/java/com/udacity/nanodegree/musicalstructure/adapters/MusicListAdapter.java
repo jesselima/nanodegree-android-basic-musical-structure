@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.udacity.nanodegree.musicalstructure.NowPlayingActivity;
 import com.udacity.nanodegree.musicalstructure.models.MusicListModel;
@@ -50,7 +51,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
     public class ViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener{
 
         private TextView id, song, artist, year, genre;
-        private ImageView imageViewPlayButton;
+        private ImageView imageViewPlayButton, like, playlist;
         private ViewGroup listItemBlock;
 
         private ViewHolder(View itemView) {
@@ -62,11 +63,28 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
             listItemBlock = itemView.findViewById(R.id.list_item_block);
             listItemBlock.setOnClickListener(this);
 
+            genre = itemView.findViewById(R.id.text_view_music_genre);
+            genre.setOnClickListener(this);
+
             id = itemView.findViewById(R.id.text_view_song_id);
             song = itemView.findViewById(R.id.text_view_song_name);
             artist = itemView.findViewById(R.id.text_view_artist_name);
-            genre = itemView.findViewById(R.id.text_view_music_genre);
             year = itemView.findViewById(R.id.text_view_song_year);
+            like = itemView.findViewById(R.id.btn_like);
+            playlist = itemView.findViewById(R.id.btn_add_to_playlist);
+
+            like.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(context, R.string.adde_to_your_favorites, Toast.LENGTH_SHORT).show();
+                }
+            });
+            playlist.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(context, R.string.adde_to_your_library, Toast.LENGTH_SHORT).show();
+                }
+            });
         }
 
         @Override

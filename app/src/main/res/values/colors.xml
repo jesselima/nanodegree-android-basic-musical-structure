@@ -4,9 +4,11 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#FF4081</color>
     <color name="cardBackground">#e6e6e6</color>
+    <color name="cardBackgroundBlue">#d9e8ff</color>
     <color name="cardBackgroundBlack">#000000</color>
     <color name="buttonText">#FFFFFF</color>
     <color name="textColorWhite">#FFFFFF</color>
     <color name="textColorBlack">#000000</color>
     <color name="divider">#cfcfcf</color>
+    <color name="buttonAlertBackground">#275cd9</color>
 </resources>

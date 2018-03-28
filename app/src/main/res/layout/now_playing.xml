@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="16dp"
     android:gravity="bottom"
     android:orientation="vertical">
@@ -16,7 +16,30 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_margin16"
+                android:layout_marginLeft="@dimen/layout_margin8"
+                android:layout_marginRight="@dimen/layout_margin8"
+                android:backgroundTint="@color/cardBackgroundBlue"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_margin8"
+                    android:padding="@dimen/layout_margin8"
+                    android:text="@string/now_activity_description"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_sub_heading"
+                    android:textStyle="italic"/>
+            </android.support.v7.widget.CardView>
+
             <ImageView
                 android:id="@+id/image_artist"
                 android:layout_width="100dp"
@@ -80,7 +103,6 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:onClick="goToPlayNow"
                     android:src="@drawable/ic_play_circle_filled_black_48dp"/>
                 <ImageView
                     android:id="@+id/btn_next"
@@ -97,17 +119,31 @@
                     android:visibility="gone"/>
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/btn_pause"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="48dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/btn_back_repeat"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_repeat_black_48dp"/>
+                <ImageView
+                    android:id="@+id/btn_pause"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_pause_black_48dp"/>
+                <ImageView
+                android:id="@+id/btn_shuffle"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_pause_black_48dp"/>
-            <Button
-                style="@style/buttonDefault"
-                android:layout_marginBottom="8dp"
-                android:onClick="goToSongDetails"
-                android:text="SONG DETAILS"/>
+                android:src="@drawable/ic_shuffle_black_48dp"/>
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
