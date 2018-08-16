@@ -24,7 +24,7 @@ public class PaymentActivity extends AppCompatActivity {
     Simplify simplify;
 
     // Public API Key for use in Sandbox
-    final String API_KEY = "sbpb_NGUyMGViOWItZDNmMi00ODdlLTk1ZTMtZTIzYWRmZDE4OTE0";
+    final String API_KEY = "API_KEY_HERE";
     CardView cardViewDescriptionLibrary;
 
     @Override

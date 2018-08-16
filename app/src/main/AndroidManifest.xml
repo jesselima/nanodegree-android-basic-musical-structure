@@ -12,8 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashScreenActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:name=".MusicLibraryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +30,7 @@
             android:name=".MusicDetailsActivity"
             android:label="@string/music_details"/>
         <activity
-            android:name=".MusicLibraryActivity"
+            android:name=".SplashScreenActivity"
             android:label="@string/musical_Structure_genres"/>
         <activity
             android:name=".MusicListByGenreActivity"
